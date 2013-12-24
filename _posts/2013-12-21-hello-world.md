@@ -1,10 +1,9 @@
 ---
-layout: default
-title: 你好，世界
+layout: post
+title: 测试Jekyll
 ---
-###{{ page.title }}
 
-唐诗
+##唐诗
 
 ```
 白日依山尽
@@ -13,4 +12,28 @@ title: 你好，世界
 更上一层楼
 ```
 
-{{ page.date | date_to_string }}
+<br>
+
+##代码
+
+``` c
+int main(int argc, char* argv[])
+{
+    printf("hello world!");
+}
+```
+
+<br>
+
+{% highlight cpp %}
+int main(int argc, char* argv[])
+{
+    printf("hello world!");
+}
+{% endhighlight %}
+
+<br>
+
+##LaTeX
+$$ E_0 = mc^2 $$
+

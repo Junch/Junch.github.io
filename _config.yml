@@ -1,1 +1,5 @@
-name: Your New Jekyll Site
+name: 我思故我少在
+markdown: kramdown
+kramdown:
+  input: GFM
+pygments: true
