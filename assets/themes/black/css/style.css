@@ -125,12 +125,12 @@ pre::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
-code {
+/*code {
     color: #008000; // green
     border: 0px solid #eee;
     border: none;
     padding: 0 3px;
-}
+}*/
 
 body div.content {}
     body div.content code.has-jax {
