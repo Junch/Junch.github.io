@@ -131,3 +131,12 @@ code {
     border: none;
     padding: 0 3px;
 }
+
+body div.content {}
+    body div.content code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #000000;
+    }
