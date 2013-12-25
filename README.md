@@ -1,7 +1,7 @@
-# 涵曦的博客
+# 我思我在的博客
 
 A static blog built with [Jekyll-BootStrap][] on github pages
-<br>the black theme from [evercoding][]
+<br>the black theme from [涵曦][]
 
 ## Function that has been realized
 
@@ -32,6 +32,6 @@ I hope I would not give up updating this blog
 **Always not be fickle in a fickle society!**
 **Having Dream, Heart Live**
 
-[evercoding]: http://evercoding.net/
+[涵曦]: http://www.hanxi.info/
 [Jekyll-BootStrap]: http://jekyllbootstrap.com
 [Skydark's blog]: http://blog.skydark.info
