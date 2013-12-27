@@ -134,8 +134,8 @@ pre::-webkit-scrollbar-thumb {
 
 /*Set the backgroundcolor of the hightlight
   This will override the color by Pygments*/
-.highlight pre {background-color: #505050;}
-.highlight pre code{color: white;}
+.highlight pre {background-color: #E4E4E4;}
+.highlight pre code{color: black;}
 
 body div.content {}
     body div.content code.has-jax {
