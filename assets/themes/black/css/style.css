@@ -125,12 +125,13 @@ pre::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
-/*code {
-    color: #008000; // green
+code {
     border: 0px solid #eee;
     border: none;
-    padding: 0 3px;
-}*/
+    padding: 0px;
+    word-wrap:break-word;
+    overflow:hidden;
+}
 
 /*Set the backgroundcolor of the hightlight
   This will override the color by Pygments*/
