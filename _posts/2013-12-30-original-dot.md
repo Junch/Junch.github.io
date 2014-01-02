@@ -87,8 +87,9 @@ digraph G {
 ![]({{ ASSET_PATH }}../media/dot-dir.png)
 
 ###参考
-
+- [UML Diagrams Using Graphviz Dot](http://www.ffnn.nl/pages/articles/media/uml-diagrams-using-graphviz-dot.php)
+- [UML class diagrams in Confluence using Graphviz and DOT](http://blog.lunatech.com/2007/04/27/uml-class-diagrams-confluence-using-graphviz-and-dot)
+- [yUML](http://www.yuml.me)
+- [Gliffy](http://www.gliffy.com)
 
 [文档]: http://www.graphviz.org/doc/info/attrs.html
-
-
