@@ -23,8 +23,8 @@ group: "navigation"
 * [jQuery][]
 
 ## 联系我？
-* 邮箱：2829397@qq.com
-* 微信：[http://www.weibo.com/u/1800673031/](http://www.weibo.com/u/1800673031/)
+* 邮箱：junc76@gmail.com
+* 微博：[http://www.weibo.com/u/1800673031/](http://www.weibo.com/u/1800673031/)
 
 [github]: http://github.com/Junch
 [hanxi]: http://www.hanxi.info
