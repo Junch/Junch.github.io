@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git:代码冲突常见解决方法"
+title: "Git: 代码冲突常见解决方法"
 tagline: "转载"
 description: ""
 tags: ["git"]
