@@ -6,8 +6,6 @@ description: ""
 tags: ["git"]
 categories: ["技巧"]
 ---
-{% include JB/setup %}
-
 SourceGear公司的[DiffMerge][diffmerge]非常好用，而且免费。将其设置为git的diff/merge工具也不复杂。首先下载PKG Installer安装。如果使用DMG安装的话，还需要另外安装命令行工具。接着执行下面的命令：
 
 {% highlight bash %}

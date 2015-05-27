@@ -6,8 +6,6 @@ description: ""
 tags: ["gtest", "gmock"]
 categories: ["单元测试"]
 ---
-{% include JB/setup %}
-
 周五要host一个关于TDD的会议，需要使用gtest。我平常都是在Mac或者Ubuntu上练习使用gtest，可考虑到同事们平常都使用VS，在VS上演示效果应该更好。经过一番努力配置成功，特将相关步骤总结如下。
 
 gmock的安装包已经包含了gtest。安装gmock后gtest的所有功能都可以使用，另外还可以使用一些gmock的特性，比如Matcher。所以我直接安装了gmock。
@@ -38,7 +36,7 @@ gmock_main也同样配置。
 {% highlight xml %}
   <ImportGroup Label="PropertySheets">
     <Import Project="$(GMOCK_HOME)\props\gmock.props" />
-  </ImportGroup>
+</ImportGroup>
 {% endhighlight %}
 
 注意：如果没有链接gmock_main.lib，你需要提供main函数如下所示。如果链接了gmock_main.lib，这个main函数也可以省掉了。
@@ -56,5 +54,5 @@ int main(int argc,char** argv){
 以上三个步骤可以让gtest/gmock跑起来了。GooglTest Runner是个VS插件，它让你感觉gtest/gmock仿佛是VS内置的单元测试框架。这里不再赘述，请访问[网站][GoogleTestRunner]。
 
 [gmock]: https://googlemock.googlecode.com/files/gmock-1.7.0.zip
-[props]: {{ ASSET_PATH }}../download/props.zip
+[props]: /download/props.zip
 [GoogleTestRunner]: https://github.com/markusl/GoogleTestRunner

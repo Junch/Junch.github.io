@@ -6,8 +6,6 @@ description: ""
 tags: ["Jekyll"]
 categories: ["技巧"]
 ---
-{% include JB/setup %}
-
 现在忽然有了写点什么的冲动，准备继续启用自己的一亩三分地。安装Jekyll发现卡壳了。
 
 原来是gem源被墙了，需要把gem源换成淘宝的源。

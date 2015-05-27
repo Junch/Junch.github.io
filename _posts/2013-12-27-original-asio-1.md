@@ -6,8 +6,6 @@ description: ""
 tags: ["asio", "boost", "cmake"]
 categories: ["笔记"]
 ---
-{% include JB/setup %}
-
 ###编译boost
 
 在Mac下使用brew编译boost，为了使用C++11，需要加入参数--c++11

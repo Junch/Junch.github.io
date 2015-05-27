@@ -6,25 +6,23 @@ description: ""
 tags: ["Jekyll", "highlight", "LaTex"]
 categories: ["杂文"]
 ---
-{% include JB/setup %}
-
 ##唐诗
 
-```
+{% highlight text %}
 白日依山尽
 黄河入海流
 欲穷千里目
 更上一层楼
-```
+{% endhighlight %}
 
 ##代码
 
-<pre class="prettyprint lang-cpp">
+{% highlight c %}
 int main(int argc, char* argv[])
 {
     printf("hello world!");
 }
-</pre>
+{% endhighlight %}
 
 ##LaTeX
 $$ E_0 = mc^2 $$

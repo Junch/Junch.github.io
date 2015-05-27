@@ -6,8 +6,6 @@ description: ""
 tags: ["gtest", "gmock"]
 categories: ["单元测试"]
 ---
-{% include JB/setup %}
-
 我对使用Visual Studio project properties做项目配置一直很感兴趣，但这方面的资料不多。昨天偶尔遇到了一篇好文章，觉得有必要记录一下。这篇[文章][stackoverflow]在stackoverflow上, 关于配置一个工程的输出目录和中间文件目录。这个例子实在太好，我就抄录如下：
 
 {% highlight xml %}
@@ -131,7 +129,7 @@ categories: ["单元测试"]
 
 ###下载[配置文件][props]
 
-[props]: {{ ASSET_PATH }}../download/props2.zip
+[props]: /download/props2.zip
 [stackoverflow]:http://stackoverflow.com/questions/3502530/using-visual-studio-project-properties-effectively-for-multiple-projects-and-con
 
 
