@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "测试Jekyll"
-tagline: "简单测试Jekyll对highlight和LaTex的支持"
+summary: "简单测试Jekyll对highlight和LaTex的支持"
 description: ""
 tags: ["Jekyll", "highlight", "LaTex"]
 categories: ["杂文"]
