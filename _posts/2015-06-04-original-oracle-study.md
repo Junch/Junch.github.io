@@ -7,7 +7,7 @@ tags: ["oracle", "database"]
 categories: ["笔记"]
 ---
 
-###访问权限
+##访问权限
 
 我对CER数据库的访问权限是只读，而且发现在SQL Developer中甚至不能展开Tables。
 
@@ -30,3 +30,18 @@ SELECT * FROM ALL_SYNONYMS;
 1. **ALL_SYNONYMS** describes the synonyms accessible to the current user.
 2. **USER_SYNONYMS** describes the synonyms owned by the current user.
 3. **USER_OBJECTS** describes all objects owned by the current user.
+
+----
+
+##注释
+
+- 单行注释：---
+- 多行注释：/* */
+{% highlight sql %}
+--SELECT * FROM USER_OBJECTS;
+SELECT * FROM USER_SYNONYMS;
+/*
+SELECT * FROM tb_name;
+DBMS_OUTPUT.PUT_LINE('Hello World');
+*/
+{% endhighlight %}
