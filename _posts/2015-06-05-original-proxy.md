@@ -58,12 +58,10 @@ ssh user@ip -NfD port
 - **-f** Requests ssh to go to background just before command execution.
 - **-N** Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
 
-可以使用下面的命令查看ssh进程是否在运行
+更详细的解释参考[man ssh](http://linux.die.net/man/1/ssh)。可以使用下面的命令查看ssh进程是否在运行
 {% highlight bash %}
 ps | grep ssh
 {% endhighlight %}
-
-更详细的解释参考[man ssh](http://linux.die.net/man/1/ssh)
 
 ##六、在Mac下使用SSH动态转发(使用密钥)
 在Windows环境下常使用putty登陆到远程Linux主机，其间使用了ppk文件。Mac下没有putty，但可以直接使用ssh命令，这个命令需要在terminal下来执行。在使用ssh前，需要把ppk文件的格式转换一下，方法是：仍然在Windows，打开puttygen.exe，读入ppk文件，然后点击Conversions菜单，选择Openssh，假定文件存为myppk.ssh。此时，把此文件传输到Mac后就可以在Mac下执行ssh来远程登陆了。我使用的命令格式为：
