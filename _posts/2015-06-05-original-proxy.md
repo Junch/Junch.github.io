@@ -34,11 +34,11 @@ categories: ["技巧"]
 
 switchysharp是chrome的一个插件，安装后作如下配置：
 第一步：配置情景模式(Proxy Profiles)
-![](/images/switchysharp1.jpg)
+![](/images/switchysharp1.png)
 
 第二步：配置切换规则(Switch Rules)
 启用切换规则，使用在线规则列表http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt
-![](/images/switchysharp2.jpg)
+![](/images/switchysharp2.png)
 
 ###备注
 PuTTy的内容来自[利用PuTTY的SSH Tunnels实现安全的代理](http://www.huluboke.com/putty-ssh-tunnels/)
