@@ -44,5 +44,36 @@ switchysharp是chrome的一个插件，安装后作如下配置：
 启用切换规则，使用在线规则列表http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt
 ![](/images/switchysharp2.png)
 
+##四、使用密钥登录OpenSSH
+请参考文章[putty使用密钥登陆OpenSSH](http://www.linuxfly.org/post/175/)
+
+##五、在Mac下使用SSH动态转发(使用密码)
+在Mac下可以直接使用ssh命令
+
+{% highlight bash %}
+ssh user@ip -NfD port
+{% endhighlight %}
+
+- **-D** Specifies a local ''dynamic'' application-level port forwarding.
+- **-f** Requests ssh to go to background just before command execution.
+- **-N** Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
+
+更详细的解释参考[man ssh](http://linux.die.net/man/1/ssh)
+
+##六、在Mac下使用SSH动态转发(使用密钥)
+在Windows环境下常使用putty登陆到远程Linux主机，其间使用了ppk文件。Mac下没有putty，但可以直接使用ssh命令，这个命令需要在terminal下来执行。在使用ssh前，需要把ppk文件的格式转换一下，方法是：仍然在Windows，打开puttygen.exe，读入ppk文件，然后点击Conversions菜单，选择Openssh，假定文件存为myppk.ssh。此时，把此文件传输到Mac后就可以在Mac下执行ssh来远程登陆了。我使用的命令格式为：
+
+{% highlight bash %}
+ssh user@ip -NfD port -i myppk.ssh
+{% endhighlight %}
+
+以上，user和ip需根据你的实际情况进行替换。myppk.ssh文件名也可以自己指定。另外，需要设置myppk.ssh的访问许可
+
+{% highlight bash %}
+chmod 700 myppk.ssh。
+{% endhighlight %}
+
 ###备注
 PuTTy的内容来自[利用PuTTY的SSH Tunnels实现安全的代理](http://www.huluboke.com/putty-ssh-tunnels/)
+
+另外部分内容来自[在Mac OS X下使用SSH登陆到远程服务器](http://www.linuxidc.com/Linux/2012-01/51021.htm)
