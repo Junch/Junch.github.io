@@ -58,6 +58,11 @@ ssh user@ip -NfD port
 - **-f** Requests ssh to go to background just before command execution.
 - **-N** Do not execute a remote command. This is useful for just forwarding ports (protocol version 2 only).
 
+可以使用下面的命令查看ssh进程是否在运行
+{% highlight bash %}
+ps | grep ssh
+{% endhighlight %}
+
 更详细的解释参考[man ssh](http://linux.die.net/man/1/ssh)
 
 ##六、在Mac下使用SSH动态转发(使用密钥)
@@ -67,10 +72,10 @@ ssh user@ip -NfD port
 ssh user@ip -NfD port -i myppk.ssh
 {% endhighlight %}
 
-以上，user和ip需根据你的实际情况进行替换。myppk.ssh文件名也可以自己指定。另外，需要设置myppk.ssh的访问许可
+以上，user和ip需根据你的实际情况进行替换。myppk.ssh文件名也可以自己指定。另外，需要设置myppk.ssh的访问许可。
 
 {% highlight bash %}
-chmod 700 myppk.ssh。
+chmod 700 myppk.ssh
 {% endhighlight %}
 
 ###备注
