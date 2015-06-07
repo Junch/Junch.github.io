@@ -19,4 +19,6 @@ categories: ["技巧"]
 git rm -r .sass-cache
 {% endhighlight %}
 
-详细的解释可参考文档[git help rm](http://linux.die.net/man/1/git-rm)
+详细的解释可参考文档[git help rm](http://linux.die.net/man/1/git-rm)。
+
+另外可参考网页[git忽略已经被提交的文件](http://segmentfault.com/q/1010000000430426)。
