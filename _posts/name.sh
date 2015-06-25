@@ -21,7 +21,7 @@ then
     echo "translate"
 fi
 
-filestr='---\nlayout: post\ntitle: ""\nsummary: ""\ndescription: ""\ntags: ["", ""]\ncategories: [""]\n---\n{% include JB/setup %}\n\n'
+filestr='---\nlayout: post\ntitle: ""\nsummary: ""\ndescription: ""\ntags: ["", ""]\ncategories: [""]\n---\n\n'
 
 name=$name$2
 echo $name

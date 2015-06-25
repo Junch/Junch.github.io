@@ -7,8 +7,6 @@ description: ""
 tags: ["git"]
 categories: ["技巧"]
 ---
-{% include JB/setup %}
-
 
 提交代码后，发现有个文件还没更新好。接下来，要么修改文件，再次提交；要么撤销刚才的提交，改好后再提交。
 
