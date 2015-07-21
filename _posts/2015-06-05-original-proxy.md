@@ -80,3 +80,5 @@ chmod 700 myppk.ssh
 PuTTy的内容来自[利用PuTTY的SSH Tunnels实现安全的代理](http://www.huluboke.com/putty-ssh-tunnels/)
 
 另外部分内容来自[在Mac OS X下使用SSH登陆到远程服务器](http://www.linuxidc.com/Linux/2012-01/51021.htm)
+
+手动安装switchysharp可参考[页面](http://switchysharp.com/install.html)
