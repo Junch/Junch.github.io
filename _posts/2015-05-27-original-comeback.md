@@ -15,3 +15,16 @@ $ gem sources -a http://ruby.taobao.org/
 $ gem sources -l 
 # 请确保只有 ruby.taobao.org，如果不移除rubygems.org，安装会非常慢。
 {% endhighlight %}
+
+NPM有类似的问题，也有必要使用淘宝镜像
+
+{% highlight bash lineno %}
+$ npm config set registry https://registry.npm.taobao.org
+
+# 配置后可通过下面方式来验证是否成功
+$ npm config get registry
+# 或者
+$ npm info express
+{% endhighlight %}
+
+参考 [国内优秀npm镜像推荐及使用](http://riny.net/2014/cnpm/)
