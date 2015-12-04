@@ -56,7 +56,86 @@ bp module!function ".if(@rcx = 2) {?? @rdx} .else {gc}"
 bp `module!function:linenumber` "r @rip=address; gc"
 {% endhighlight %}
 
-5、给managed代码打断点
+5、数据断点（data breakpoint or access breakpoint）
+{% highlight text %}
+ba [r|w|e][size] Addr ; Break on Access: [r=read/write, w=write, e=execute], size=[1|2|4|8 bytes]
+比如下面的例子
+ba r4 myVar
+
+{% endhighlight %}
+
+6、给managed代码打断点
 {% highlight text %}
 暂且留白，这部分内容待补充
 {% endhighlight %}
+
+
+### 调试如下程序
+
+{% highlight cpp linenos %}
+// Program name: hello.exe
+// File name: hello.cpp
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int gNumber = 0;
+
+__declspec(noinline)
+void printHello(int i)
+{
+    printf(">> printHello\n");
+    printf("%d, Hello World!\n",i);
+    gNumber = i;
+    printf("<< printHello\n");
+}
+
+__declspec(noinline)
+int getNumber(int i) {
+    return 2*i+1;
+}
+
+int
+main( int /*argc*/, char** /*argv*/ )
+{
+    for (int i=0; i<10; ++i){
+        printHello(getNumber(i));
+    }
+
+    return 0;
+}
+{% endhighlight %}
+
+首先采用如下命令进行编译链接。
+{% highlight bat %}
+cl /EHa /Zi /Ox /favor:INTEL64 hello.cpp /link /debug
+{% endhighlight %}
+
+给程序打下如下断点
+
+1. 在hello.cpp的第27行打下断点
+2. 对于printHello函数，当参数i为11时让程序停下来
+3. 对于getNumber函数，当函数的返回值为7的时候让程序停下来
+4. 对于printHello函数，当参数i大于11后，不再执行该函数
+5. 让getNumber返回一个固定的值比如10
+6. 当gNumber被设置成13的时候，打断点
+
+答案如下
+
+{% highlight bat %}
+1. bp `hello!hello.cpp:27`
+2. bp hello!printHello ".if (i=0n11) {} .else {gc}" 或
+   bp hello!printhello ".if (i==0n11) {} .else {gc}" 或
+   bp hello!printhello ".if (@ecx=0n11) {} .else {gc}" 或
+   bp hello!printhello ".if (@ecx==0n11) {} .else {gc}"
+3. bp hello!getNumber "gu; .if (@eax=0n7) {} .else {gc}"
+4. bp hello!printHello ".if (@ecx > 0n11) {r rip=poi(@rsp); r rsp=@rsp+0x8}; gc"
+5. bp hello!getNumber "gu; r rax=0n10; g"
+6. hello!gNumber ".if (dwo(hello!gNumber) == 0n13) {} .else {gc}"
+{% endhighlight %}
+
+
+
+
+
+
