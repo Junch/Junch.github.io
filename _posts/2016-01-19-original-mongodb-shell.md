@@ -39,7 +39,7 @@ db.e2873097_week34.update({table_name: "WeeklyReportCount"}, {
 
 {% highlight javascript %}
 // Error
-db.e2873097_week34.update({table_name: "WeeklyReportCount"}, {
+db.2873097_week34.update({table_name: "WeeklyReportCount"}, {
     $set: {
         "r1.f1": NumberInt(1300)
     }
@@ -47,7 +47,7 @@ db.e2873097_week34.update({table_name: "WeeklyReportCount"}, {
 });
 
 // Correct
-db["e2873097_week34"].update({table_name: "WeeklyReportCount"}, {
+db["2873097_week34"].update({table_name: "WeeklyReportCount"}, {
     $set: {
         "r1.f1": NumberInt(1300)
     }
