@@ -57,3 +57,4 @@ locales:
 markdown: kramdown
 highlighter: pygments
 paginate: 5
+gems: [jekyll-paginate]
