@@ -15,26 +15,29 @@ categories: ["笔记"]
 ## 头文件的package spec
 plugin-header.nuspec
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd>
+<package >
   <metadata>
-    <id>plugin-header</id>
+    <id>plugin-lib_win_$configuration$_$instructionset$_$toolchain$</id>
     <version>1.0.0</version>
     <authors>Test</authors>
     <owners>Test</owners>
-    <description>Plugin App</description>
+    <description>plugin $platform$-bit $configuration$ libs</description>
+    <dependencies>
+      <dependency id="Plugin-header" version="$version$"/>
+    </dependencies>
   </metadata>
   <files>
-    <file src="include\**" target="include"/>
+    <file src="lib-$platform$\**" target="lib"/>
   </files>
 </package>
-{% endhighlight %}
+```
 
 ## 库文件的package spec
 plugin-lib.nuspec
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd>
   <metadata>
@@ -51,13 +54,13 @@ plugin-lib.nuspec
     <file src="lib-$platform$\**" target="lib"/>
   </files>
 </package>
-{% endhighlight %}
+```
 
 执行如下命令来生成lib的package *plugin-lib_win_debug_intel64_v140.1.0.0-A001M008.nupkg*
 
-{% highlight batch %}
+```batch
 nuget pack plugin.nuspec -basepath c:\Plugin -version 1.0.0-A001M008 -properties configuration=debug;instructionset=intel64;toolchain=v140;platform=x64;bit=64
-{% endhighlight %}
+```
 
 ## Reference
 - [Nuspec Reference](https://docs.nuget.org/create/nuspec-reference)

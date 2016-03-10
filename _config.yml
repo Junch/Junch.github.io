@@ -55,6 +55,10 @@ locales:
 
 ### Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 paginate: 5
 gems: [jekyll-paginate]
+
+kramdown:
+    input: GFM
+    hard_wrap: false
