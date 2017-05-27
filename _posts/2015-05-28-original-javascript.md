@@ -14,7 +14,7 @@ python的list comprehensions的确很精彩，有空我会整理一下。课后�
 
 下面的代码基本来源于网站https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
-{% highlight javascript %}
+```javascript
 require("should");
 
 describe("functional programming", function(){
@@ -83,7 +83,7 @@ describe("functional programming", function(){
     });
 });
 
-{% endhighlight %}
+```
 
 Javascript的闭包也是个蛮有意思的概念，这两天我也要研究一下。
 

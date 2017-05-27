@@ -9,23 +9,23 @@ categories: ["技巧"]
 ---
 现在忽然有了写点什么的冲动，准备继续启用自己的一亩三分地。安装Jekyll时卡壳了，原来是gem源被墙了，需要把gem源换成淘宝的源。
 
-{% highlight bash lineno %}
+```bash
 $ gem sources --remove https://rubygems.org/  
 $ gem sources -a http://ruby.taobao.org/  
 $ gem sources -l 
 # 请确保只有 ruby.taobao.org，如果不移除rubygems.org，安装会非常慢。
-{% endhighlight %}
+```
 
 NPM有类似的问题，也有必要使用淘宝镜像
 
-{% highlight bash lineno %}
+```bash
 $ npm config set registry https://registry.npm.taobao.org
 
 # 配置后可通过下面方式来验证是否成功
 $ npm config get registry
 # 或者
 $ npm info express
-{% endhighlight %}
+```
 
 ### 补充
 

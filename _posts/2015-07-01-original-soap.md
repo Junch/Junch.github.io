@@ -10,7 +10,7 @@ SOAP的基本介绍可以参考网页[SOAP Introduction](http://www.w3schools.co
 
 我这里主要是介绍一个简单的例子，前面的步骤可以参考[Sending SOAP Requests by Using Visual Studio .NET Client (C#)](https://technet.microsoft.com/en-us/library/aa226051(v=sql.80).aspx)。
 
-{% highlight csharp %}
+```csharp
 
 using System;
 using Soap.ClarifyService;
@@ -36,11 +36,11 @@ namespace Soap
     }
 }
 
-{% endhighlight %}
+```
 
 Node.js也可以访问SOAP，而且更简单，示例代码如下：
 
-{% highlight javascript %}
+```javascript
 
 var soap = require("soap");
 var url = "http://xxx.adsk.com/clarify/webservice.asmx?WSDL";
@@ -63,7 +63,7 @@ reqURL = soap.createClient(url, function(err, client){
     });
 });
 
-{% endhighlight %}
+```
 
 有几个地方需要澄清：
 
@@ -72,7 +72,7 @@ reqURL = soap.createClient(url, function(err, client){
 
 如果你想尝试一个可以运行的例子，可以试试下面的代码：
 
-{% highlight javascript %}
+```javascript
 var soap = require("soap");
 var url = 'http://www.webservicex.net/stockquote.asmx?WSDL';
 
@@ -92,7 +92,7 @@ reqURL = soap.createClient(url, function(err, client){
     });
 });
 
-{% endhighlight %}
+```
 
 
 

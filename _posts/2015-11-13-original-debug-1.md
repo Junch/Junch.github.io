@@ -20,7 +20,7 @@ categories: ["Debug"]
 C:\symchk  c:\Windows\notepad.exe /v
 得到下面的结果：
 
-{% highlight text %}
+```
 C:\>symchk  c:\Windows\notepad.exe /v
 [SYMCHK] Searching for symbols to c:\Windows\notepad.exe in path SRV*C:\WINDOWS\SYMBOLS*http://msdl.microsoft.com/download/symbols
 DBGHELP: Symbol Search Path: SRV*C:\WINDOWS\SYMBOLS*http://msdl.microsoft.com/download/symbols
@@ -66,14 +66,14 @@ pdbDbiAge           0x00000002
 
 SYMCHK: FAILED files = 0
 SYMCHK: PASSED + IGNORED files = 1
-{% endhighlight %}
+```
 
 在C:\WINDOWS\SYMBOLS目录下你会发现下载的notepad.pdb文件。
 
 ### 用SymChk查看node的pdb文件路径
 最近对node.js有些着迷，就以node为例来查找其pdb文件路径
 
-{% highlight text %}
+```
 C:\>where node
 C:\Program Files\nodejs\node.exe
 
@@ -124,7 +124,7 @@ SYMCHK: node.exe             FAILED  - node.pdb mismatched or not found
 
 SYMCHK: FAILED files = 1
 SYMCHK: PASSED + IGNORED files = 0
-{% endhighlight %}
+```
 
 很明显在这种情况下是无法查找到pdb文件的，但通过这个命令可以获得一些信息，比如这个node.exe所对应的pdb
 文件最初的位置，pdbFilename在d:\jenkins\workspace\nodejs-msi-julien\d8c2e2bb\Release\node.pdb。
@@ -134,7 +134,7 @@ SYMCHK: PASSED + IGNORED files = 0
 ### 用Windbg查看pdb文件路径 - 方法(1)
 这里以百度云管家为例，启动Windbg并Attach上百度云管家，执行命令`!lmi`
 
-{% highlight text %}
+```
 0:000> !lmi baiduyunguanjia
 Loaded Module Info: [baiduyunguanjia] 
          Module: BaiduYunGuanjia
@@ -153,12 +153,12 @@ Debug Data Dirs: Type  Size     VA  Pointer
                  C:\Users\chenju\AppData\Roaming\Baidu\BaiduYunGuanjia\BaiduYunGuanjia.exe
     Symbol Type: NONE     - pdb not found from image path.
     Load Report: no symbols loaded
-{% endhighlight %}
+```
 
 ### 用Windbg查看pdb文件路径 - 方法(2)
 结合使用`!sym`和`reload`
 
-{% highlight text %}
+```
 0:043> !sym noisy
 noisy mode - symbol prompts on
 0:043> .reload /f BaiduYunGuanjia.exe
@@ -177,12 +177,12 @@ BaiduYunGuanjia        The system cannot find the file specified : srv*c:\symbol
 				is an invalid UNC store (an invalid path or the pingme.txt file is
 				not present in the root directory), or the file is present in the
 				symbol server exclusion list.
-{% endhighlight %}
+```
 
 ### 用Windbg查看pdb文件路径 - 方法(3)
 使用命令`!chksym`或者是`!itoldyouso`，发现两者的结果一样
 
-{% highlight text %}
+```
 0:043> !chksym baiduyunguanjia
 
 C:\Users\chenju\AppData\Roaming\Baidu\BaiduYunGuanjia\BaiduYunGuanjia.exe
@@ -191,7 +191,7 @@ C:\Users\chenju\AppData\Roaming\Baidu\BaiduYunGuanjia\BaiduYunGuanjia.exe
           pdb: D:\cygwin\home\scmpf\compiler_src\jinjiqiang_1581659_win64\0\mc\wangpan\windows\yunbrowser\output\pdb\YunUi.pdb
       pdb sig: DB20D638-5930-4F7A-BA34-2D64C7A4491A
           age: 1
-{% endhighlight %}
+```
 
 
 参考阅读以下链接：

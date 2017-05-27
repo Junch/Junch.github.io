@@ -8,7 +8,7 @@ categories: ["单元测试"]
 ---
 我对使用Visual Studio project properties做项目配置一直很感兴趣，但这方面的资料不多。昨天偶尔遇到了一篇好文章，觉得有必要记录一下。这篇[文章][stackoverflow]在stackoverflow上, 关于配置一个工程的输出目录和中间文件目录。这个例子实在太好，我就抄录如下：
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
@@ -64,13 +64,13 @@ categories: ["单元测试"]
 --> 
   </PropertyGroup>
 </Project>
-{% endhighlight %}
+```
 
-###更新gmock.props文件
+### 更新gmock.props文件
 
 上篇文章所附的配置文件非常简单，如下所示：
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemDefinitionGroup>
@@ -84,11 +84,11 @@ categories: ["单元测试"]
     </Link>
   </ItemDefinitionGroup>
 </Project>
-{% endhighlight %}
+```
 
 上面的配置文件仅仅配置了Debug模式，显然在Release模式下无法正常工作。另外链接库也是可以指定的。参考Stackoverflow上的例子，我将配置文件更新如下：
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="UserMacros">
@@ -125,9 +125,9 @@ categories: ["单元测试"]
     </Link>
   </ItemDefinitionGroup> 
 </Project>
-{% endhighlight %}
+```
 
-###下载[配置文件][props]
+下载[配置文件][props]
 
 [props]: /download/props2.zip
 [stackoverflow]:http://stackoverflow.com/questions/3502530/using-visual-studio-project-properties-effectively-for-multiple-projects-and-con

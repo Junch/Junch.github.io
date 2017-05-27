@@ -13,10 +13,10 @@ QA老大有点‘洁癖’，希望修改这几个突兀的数值，让图形好
 
 先执行命令mongo, 然后在shell中执行show dbs，use CERDataCache选择好数据库。接着执行下面的script
 
-{% highlight javascript %}
+```javascript
 
 // Show the data
-for (var i=25; i<45: ++i) {
+for (var i=25; i<45; ++i) {
     var cur = db["e2873097_week" + i].find({table_name: "WeeklyReportCount"});
     printjson({i:i, val: cur.next().r1.f1});
 }
@@ -29,7 +29,7 @@ db.e2873097_week34.update({table_name: "WeeklyReportCount"}, {
 }
 });
 
-{% endhighlight %}
+```
 
 有以下两点需要注意的地方
 
@@ -37,7 +37,7 @@ db.e2873097_week34.update({table_name: "WeeklyReportCount"}, {
 
 2. 如果document的名字以数字开始，那么下面的写法就是错误的，比如
 
-{% highlight javascript %}
+```javascript
 // Error
 db.2873097_week34.update({table_name: "WeeklyReportCount"}, {
     $set: {
@@ -54,4 +54,4 @@ db["2873097_week34"].update({table_name: "WeeklyReportCount"}, {
 }
 });
 
-{% endhighlight %}
+```

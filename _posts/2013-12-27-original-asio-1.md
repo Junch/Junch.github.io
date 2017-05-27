@@ -6,20 +6,20 @@ description: ""
 tags: ["asio", "boost", "cmake"]
 categories: ["笔记"]
 ---
-###编译boost
+### 编译boost
 
 在Mac下使用brew编译boost，为了使用C++11，需要加入参数--c++11
 
-{% highlight bash %}
+```bash
 $ brew install boost --c++11
-{% endhighlight %}
+```
 
 在我的Mac虚拟机里面用了20分钟左右编译成功。
 
-###示例代码
+### 示例代码
 服务器代码：
 
-{% highlight cpp %}
+```cpp
 #include <iostream>
 #include <boost/asio.hpp>
  
@@ -57,11 +57,11 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
-{% endhighlight %}
+```
 
 客户端代码：
 
-{% highlight cpp %}
+```cpp
 #include <iostream>
 #include <boost/asio.hpp>
  
@@ -91,11 +91,11 @@ int main(int argc, char* argv[])
  
     return 0;
 }
-{% endhighlight %}
+```
 
-###编写CMake脚本
+### 编写CMake脚本
 
-{% highlight cmake %}
+```cmake
 CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
 
 PROJECT (HELLO)
@@ -115,14 +115,14 @@ TARGET_LINK_LIBRARIES(server ${USED_LIBS})
 
 ADD_EXECUTABLE(client client.cpp)
 TARGET_LINK_LIBRARIES(client ${USED_LIBS})
-{% endhighlight %}
+```
 
-###关闭server进程
+### 关闭server进程
 
-{% highlight bash %}
+```bash
 $ ps -A | grep [name of program you want to close]
 $ kill -9 [process id]
-{% endhighlight %}
+```
 
-###下载代码
+### 下载代码
 [代码](https://github.com/Junch/asio/tree/master/hello)

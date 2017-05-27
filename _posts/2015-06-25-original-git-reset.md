@@ -12,9 +12,9 @@ categories: ["技巧"]
 
 撤销是执行下面的命令：
 
-{% highlight bash %}
+```bash
 $ git reset HEAD~1
-{% endhighlight %}
+```
 
 运行git status，上次提交的文件又回到unstaged的状态。
 

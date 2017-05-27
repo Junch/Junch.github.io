@@ -12,7 +12,7 @@ categories: ["技巧"]
 
 $resource以前是这样声明和使用的:
 
-{% highlight javascript %}
+```javascript
 
 angular.module('winesStore')
 .constant('dataUrl', '/wines/:id')
@@ -33,11 +33,11 @@ var UpdateWine = function (wine) {
         });
 };
 
-{% endhighlight %}
+```
 
 我更改成下面所示，UpdateWine就无法正常工作了。wineFactory.save没有post到正确的url。
 
-{% highlight javascript %}
+```javascript
 
 angular.module('winesStore')
 .constant('dataUrl', '/wines/:id')
@@ -56,7 +56,7 @@ var UpdateWine = function (wine) {
         });
 };
 
-{% endhighlight %}
+```
 
 原因其实不复杂。看看文档[AngularJS Documentation for $resource](https://docs.angularjs.org/api/ngResource/service/$resource)。
 
