@@ -3,8 +3,8 @@ layout: post
 title: "Debug on the iOS Simulator with LLDB"
 summary: "使用lldb在iOS Simulator上调试app"
 description: ""
-tags: ["", ""]
-categories: ["Study"]
+tags: ["iOS", ""]
+categories: ["Debug"]
 ---
 I've built a iOS App named *Calculator.app*. Its bundle identifier is *test.game.org.Calculator*. I want to debug it with LLDB on iOS Simulator iPhone 6. The steps are as below.
 
