@@ -33,6 +33,8 @@ svn log -r 236144 -v
 svn log -r {2016-05-03}:{2016-05-04} | sed -n '1p; 2,/^-/d; /huiluo/,/^-/p'
 svn log --verbose --search huiluo --revision {2016-05-01}:{2016-05-05}
 svn log --search juchen3 -l 500 https://wwwin-svn-gpk.cisco.com/jabber-all/jabber/trunk
+svn log --limits 10 # The latest 10 revisions
+svn log -l 10       # The latest 10 revisions
 
 svn status | findstr "^M" # Find modified files on windows
 svn status | grep ^M
