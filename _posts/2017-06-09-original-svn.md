@@ -45,7 +45,13 @@ svn delete thegeekstuff
 svn move src dest
 ```
 
+#### 6.合并
+```bash
+svn merge -c svn merge -c 254669 https://wwwin-svn-gpk.cisco.com/jabber-all/jabber/trunk
+```
+
 ### 参考
 
 - [svn cheat sheet 1](http://www.cheat-sheets.org/saved-copy/subversion-cheat-sheet-v1.pdf)
 - [svn cheat sheet 2](https://deveo.com/svn-commands)
+- [7 Subversion SVN Merge Command Examples for Branch and Trunks](http://www.thegeekstuff.com/2014/03/svn-merge-command)
