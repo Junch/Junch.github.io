@@ -199,12 +199,24 @@ C:\Users\chenju\AppData\Roaming\Baidu\BaiduYunGuanjia\BaiduYunGuanjia.exe
 dumpbin /pdbpath baiduyunguanjia.exe
 ```
 
+### 查看静态链接库的pdb文件
+
+Static linking使用/Z7或者/Zi选项。使用/Z7选项的话，不会生成pdb文件，所有调试信息保存在.obj文件中。使用/Zi选项将生成一个pdb文件，但这个pdb文件的路径却只能用文字编辑器打开.lib文件来查看。
+
+我们习惯于将第三方静态库预先编译好，传到source server上。然后在其他工程中来link这个库文件。潜在的一个风险如下所示，就是找不到pdb文件，因为lib文件所对应的pdb文件路径和实际的pdb文件路径可能不一致，结果linking的对象没有debug信息。
+
+```
+libldap_r.lib(controls.obj) : warning LNK4099: PDB 'libldap_r.pdb' was not found with 'libldap_r.lib(controls.obj)' or at 'C:\Projects\trunk\components\csf-person\out\windows-x86-MD-unicode-vs2015-rel\bin\libldap_r.pdb'; linking object as if no debug info
+libldap_r.lib(tls2.obj) : warning LNK4099: PDB 'libldap_r.pdb' was not found with 'libldap_r.lib(tls2.obj)' or at 'C:\Projects\trunk\components\csf-person\out\windows-x86-MD-unicode-vs2015-rel\bin\libldap_r.pdb'; linking object as if no debug info
+libldap_r.lib(messages.obj) : warning LNK4099: PDB 'libldap_r.pdb' was not found with 'libldap_r.lib(messages.obj)' or at 'C:\Projects\trunk\components\csf-person\out\windows-x86-MD-unicode-vs2015-rel\bin\libldap_r.pdb'; linking object as if no debug info
+```
+
 参考阅读以下链接：
 
 1. [http://stackoverflow.com/questions/18756009/get-pdb-file-path-from-windbg](http://stackoverflow.com/questions/18756009/get-pdb-file-path-from-windbg)
 2. [PDB Files: What Every Developer Must Know](http://www.wintellect.com/devcenter/jrobbins/pdb-files-what-every-developer-must-know)
 3. [Setting the WinDbg Symbol Search Path (article + video)](https://www.osr.com/blog/2014/10/01/setting-the-windbg-symbol-search-path/)
-
+4. [/Zi vs /Z7 - static linking](https://social.msdn.microsoft.com/Forums/vstudio/en-US/132b7383-7941-4665-b0f1-ccf024b9c601/zi-vs-z7-static-linking?forum=vsdebug)
 
 
 
