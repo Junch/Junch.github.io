@@ -193,6 +193,11 @@ C:\Users\chenju\AppData\Roaming\Baidu\BaiduYunGuanjia\BaiduYunGuanjia.exe
           age: 1
 ```
 
+### 用Dumpbin查看pdb文件路径
+
+```
+dumpbin /pdbpath baiduyunguanjia.exe
+```
 
 参考阅读以下链接：
 
